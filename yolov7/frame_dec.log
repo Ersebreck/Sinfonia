@@ -1,0 +1,84 @@
+Soy un JOB de prueba en GPU
+Tue Nov 15 14:16:27 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 520.61.05    Driver Version: 520.61.05    CUDA Version: 11.8     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 6000     Off  | 00000000:AF:00.0 Off |                    0 |
+| N/A   32C    P0    24W / 250W |      0MiB / 23040MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+YOLOR 🚀 v0.1-115-g072f76c torch 1.13.0+cu117 CUDA:0 (Quadro RTX 6000, 22698.9375MB)
+
+Model Summary: 255 layers, 6227101 parameters, 6227101 gradients
+/hpcfs/home/ing_biomedica/es.lozano/.local/lib/python3.9/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Fusing layers... 
+WARNING: --img-size 400 must be multiple of max stride 32, updating to 416
+ Convert model to Traced-model... 
+ traced_script_module saved! 
+ model is traced! 
+
+video 1/1 (1/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 3 persons, Done. (7.7ms) Inference, (35.5ms) NMS
+video 1/1 (2/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 3 persons, Done. (8.2ms) Inference, (1.3ms) NMS
+video 1/1 (3/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 3 persons, Done. (8.1ms) Inference, (1.0ms) NMS
+video 1/1 (4/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.7ms) Inference, (0.9ms) NMS
+video 1/1 (5/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.3ms) Inference, (0.9ms) NMS
+video 1/1 (6/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.7ms) Inference, (0.9ms) NMS
+video 1/1 (7/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.7ms) Inference, (0.9ms) NMS
+video 1/1 (8/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.6ms) Inference, (0.8ms) NMS
+video 1/1 (9/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (8.5ms) Inference, (0.8ms) NMS
+video 1/1 (10/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.3ms) Inference, (0.8ms) NMS
+video 1/1 (11/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.4ms) Inference, (0.8ms) NMS
+video 1/1 (12/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.6ms) Inference, (0.9ms) NMS
+video 1/1 (13/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.9ms) Inference, (0.9ms) NMS
+video 1/1 (14/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.6ms) Inference, (0.8ms) NMS
+video 1/1 (15/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.5ms) Inference, (0.8ms) NMS
+video 1/1 (16/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.8ms) Inference, (0.9ms) NMS
+video 1/1 (17/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.6ms) Inference, (0.8ms) NMS
+video 1/1 (18/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.5ms) Inference, (0.8ms) NMS
+video 1/1 (19/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (6.9ms) Inference, (0.8ms) NMS
+video 1/1 (20/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.8ms) Inference, (0.9ms) NMS
+video 1/1 (21/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.8ms) Inference, (0.9ms) NMS
+video 1/1 (22/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.8ms) Inference, (0.9ms) NMS
+video 1/1 (23/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.6ms) Inference, (0.9ms) NMS
+video 1/1 (24/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (8.0ms) Inference, (0.9ms) NMS
+video 1/1 (25/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.5ms) Inference, (0.9ms) NMS
+video 1/1 (26/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.8ms) Inference, (0.9ms) NMS
+video 1/1 (27/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.7ms) Inference, (0.9ms) NMS
+video 1/1 (28/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.7ms) Inference, (0.9ms) NMS
+video 1/1 (29/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.6ms) Inference, (0.9ms) NMS
+video 1/1 (30/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 1 person, Done. (7.5ms) Inference, (0.8ms) NMS
+video 1/1 (31/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.5ms) Inference, (0.8ms) NMS
+video 1/1 (32/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.5ms) Inference, (0.8ms) NMS
+video 1/1 (33/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.5ms) Inference, (0.9ms) NMS
+video 1/1 (34/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.6ms) Inference, (0.6ms) NMS
+video 1/1 (35/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.5ms) Inference, (0.6ms) NMS
+video 1/1 (36/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.5ms) Inference, (0.6ms) NMS
+video 1/1 (37/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.3ms) Inference, (0.6ms) NMS
+video 1/1 (38/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.7ms) Inference, (0.6ms) NMS
+video 1/1 (39/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.5ms) Inference, (0.6ms) NMS
+video 1/1 (40/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.5ms) Inference, (0.6ms) NMS
+video 1/1 (41/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (6.8ms) Inference, (0.6ms) NMS
+video 1/1 (42/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: 2 persons, Done. (7.8ms) Inference, (0.9ms) NMS
+video 1/1 (43/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.8ms) Inference, (0.6ms) NMS
+video 1/1 (44/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.7ms) Inference, (0.6ms) NMS
+video 1/1 (45/45) /hpcfs/home/ing_biomedica/es.lozano/sin/yolov7/../datos/calle1.mp4: Done. (7.6ms) Inference, (0.6ms) NMS
+Results saved to runs/detect/exp16
+
+
+Detection time:
+1.135 s
+
+
