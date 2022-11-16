@@ -1,0 +1,23 @@
+Soy un JOB de prueba en GPU
+Wed Nov  9 16:44:59 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 520.61.05    Driver Version: 520.61.05    CUDA Version: 11.8     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 6000     Off  | 00000000:D8:00.0 Off |                    0 |
+| N/A   38C    P0    48W / 250W |      0MiB / 23040MiB |      4%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Using CPU. Note: This module is much faster with a GPU.
+slurmstepd: error: *** JOB 57272 ON nodei-gpu-2 CANCELLED AT 2022-11-09T16:54:58 DUE TO TIME LIMIT ***
