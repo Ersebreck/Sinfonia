@@ -41,7 +41,11 @@ def segment(image_path):
  
 path = "../datos/orion.jpg"
 
+#####
+# CORRER DETECT Y KEYP O SOLO SEGMENT
+#####
+
 #detect(path)
 #keyp(path)
 
-segment(path)
+#segment(path)
