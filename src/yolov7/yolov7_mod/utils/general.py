@@ -18,9 +18,9 @@ import torch
 import torchvision
 import yaml
 
-from yolov7_mod.utils.google_utils import gsutil_getsize
-from yolov7_mod.utils.metrics import fitness
-from yolov7_mod.utils.torch_utils import init_torch_seeds
+from yolov7.yolov7_mod.utils.google_utils import gsutil_getsize
+from yolov7.yolov7_mod.utils.metrics import fitness
+from yolov7.yolov7_mod.utils.torch_utils import init_torch_seeds
 
 # Settings
 torch.set_printoptions(linewidth=320, precision=5, profile='long')

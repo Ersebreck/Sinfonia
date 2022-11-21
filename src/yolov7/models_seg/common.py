@@ -1,4 +1,4 @@
-# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# YOLOv7 🚀 by Ultralytics, GPL-3.0 license
 """
 Common modules
 """
@@ -21,12 +21,12 @@ import torch.nn.functional as F
 from PIL import Image
 from torch.cuda import amp
 
-from yolov7_segmentation.utils.dataloaders import exif_transpose, letterbox
-from yolov7_segmentation.utils.general import (LOGGER, ROOT, Profile, check_requirements, check_suffix, check_version, colorstr,
+from yolov7.yolov7_segmentation.utils.dataloaders import exif_transpose, letterbox
+from yolov7.yolov7_segmentation.utils.general import (LOGGER, ROOT, Profile, check_requirements, check_suffix, check_version, colorstr,
                            increment_path, make_divisible, non_max_suppression, scale_coords, xywh2xyxy, xyxy2xywh,
                            yaml_load)
-from yolov7_segmentation.utils.plots import Annotator, colors, save_one_box
-from yolov7_segmentation.utils.torch_utils import copy_attr, smart_inference_mode
+from yolov7.yolov7_segmentation.utils.plots import Annotator, colors, save_one_box
+from yolov7.yolov7_segmentation.utils.torch_utils import copy_attr, smart_inference_mode
 
 
 def autopad(k, p=None):  # kernel, padding
@@ -390,7 +390,7 @@ class DetectMultiBackend(nn.Module):
         #   TensorFlow GraphDef:            *.pb
         #   TensorFlow Lite:                *.tflite
         #   TensorFlow Edge TPU:            *_edgetpu.tflite
-        from yolov7_segmentation.models.experimental import attempt_download, attempt_load  # scoped to avoid circular import
+        from yolov7.yolov7_segmentation.models.experimental import attempt_download, attempt_load  # scoped to avoid circular import
 
         super().__init__()
         w = str(weights[0] if isinstance(weights, list) else weights)

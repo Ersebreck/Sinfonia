@@ -3,15 +3,15 @@ import torch
 import cv2
 from torchvision import transforms
 import numpy as np
-from yolov7_mod.utils.datasets import letterbox
-from yolov7_mod.utils.general import non_max_suppression_kpt
-from yolov7_mod.utils.plots import output_to_keypoint, plot_skeleton_kpts
+from yolov7.yolov7_mod.utils.datasets import letterbox
+from yolov7.yolov7_mod.utils.general import non_max_suppression_kpt
+from yolov7.yolov7_mod.utils.plots import output_to_keypoint, plot_skeleton_kpts
 
 
 def pose_stimation(image_path, name="exp", proyect="key"):
     
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    weigths = torch.load('yolov7_mod/yolov7-w6-pose.pt', map_location=device)
+    weigths = torch.load('yolov7.yolov7_mod/yolov7-w6-pose.pt', map_location=device)
     model = weigths['model']
     _ = model.float().eval()
     

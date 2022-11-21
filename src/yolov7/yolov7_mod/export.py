@@ -9,12 +9,12 @@ import torch
 import torch.nn as nn
 from torch.utils.mobile_optimizer import optimize_for_mobile
 
-import yolov7_mod.models
-from yolov7_mod.models.experimental import attempt_load, End2End
-from yolov7_mod.utils.activations import Hardswish, SiLU
-from yolov7_mod.utils.general import set_logging, check_img_size
-from yolov7_mod.utils.torch_utils import select_device
-from yolov7_mod.utils.add_nms import RegisterNMS
+import yolov7.yolov7_mod.models
+from yolov7.yolov7_mod.models.experimental import attempt_load, End2End
+from yolov7.yolov7_mod.utils.activations import Hardswish, SiLU
+from yolov7.yolov7_mod.utils.general import set_logging, check_img_size
+from yolov7.yolov7_mod.utils.torch_utils import select_device
+from yolov7.yolov7_mod.utils.add_nms import RegisterNMS
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

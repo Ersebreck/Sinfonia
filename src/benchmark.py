@@ -5,6 +5,7 @@ from timeit import default_timer as timer
 import depth
 import csv
 import cv2
+
 from yolov7.YoloRos import yolo_segment, yolo_detect
 
 # obtain absolute path to the directory containing this file
@@ -36,6 +37,25 @@ def get_processor_name():
                 return re.sub( ".*model name.*:", "", line,1)
     return ""
 
+
+def test_segment(data, method, path):
+    rgb_image, depth_image = data
+    # x1,y1,x2,y2,label = object.object_detection(path) TODO
+    pred = yolo_segment(path)
+    if len(pred[1])>0:
+      arr = pred[1][0]
+      result = pred[0]
+      x1,y1,x2,y2,label = int(arr[0]),int(arr[1]),int(arr[2]),int(arr[3]),int(arr[4])
+      tiempo_detect = int(pred[2]) # este es el tiempo que demora la prediccion
+      cx = 10
+      cy = 10
+      total_time = tiempo_detect
+      bounding_box = y1,x1,y2,x2
+      return img, total_time, result
+    else:
+        return None, 0,0,0
+
+
 def test_cpu(data, method,path):
     rgb_image, depth_image = data
     start = timer()
@@ -44,7 +64,8 @@ def test_cpu(data, method,path):
     if len(pred[1])>0:
       arr = pred[1][0]
       result = pred[0]
-      x1,y1,x2,y2,label = int(arr[0]),int(arr[1]),int(arr[2]),int(arr[3]),int(arr[5])
+      x1,y1,x2,y2,label = int(arr[0]),int(arr[1]),int(arr[2]),int(arr[3]),int(arr[4])
+      tiempo_detect = int(pred[2])
       end = timer()
     else:
         return None, 0,0,0

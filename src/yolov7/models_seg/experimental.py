@@ -1,4 +1,4 @@
-# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# YOLOv7 🚀 by Ultralytics, GPL-3.0 license
 """
 Experimental modules
 """
@@ -8,7 +8,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from yolov7_segmentation.utils.downloads import attempt_download
+from yolov7.yolov7_segmentation.utils.downloads import attempt_download
 
 
 class Sum(nn.Module):

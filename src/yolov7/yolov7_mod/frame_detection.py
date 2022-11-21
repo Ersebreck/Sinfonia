@@ -1,9 +1,9 @@
-from yolov7_mod.detect import *
+from yolov7.yolov7_mod.detect import *
 
 
-def frame_detect(source, weights="yolov7_mod/yolov7-tiny.pt", view_img=False,
+def frame_detect(source, weights="yolov7/yolov7_mod/yolov7-tiny.pt", view_img=False,
                  save_txt=False, imgsz=400, trace=True,
-                 nosave=False, project="runs/detect", name="exp",
+                 nosave=True, project="runs/detect", name="exp",
                  exist_ok=False, device="", conf_thres=0.25,
                  iou_thres=0.45, save_conf=False, classes=[0],
                  agnostic_nms=False, augment=False, ):
@@ -24,11 +24,11 @@ def frame_detect(source, weights="yolov7_mod/yolov7-tiny.pt", view_img=False,
 
     # Load model
     model = attempt_load(weights, map_location=device)  # load FP32 model
-    stride = int(model.stride.max())  # model stride
+    stride = 32#int(model.stride.max())  # model stride
     imgsz = check_img_size(imgsz, s=stride)  # check img_size
 
-    if trace:
-        model = TracedModel(model, device, imgsz)
+    #if trace:
+    #    model = TracedModel(model, device, imgsz)
 
     if half:
         model.half()  # to FP16
@@ -74,6 +74,7 @@ def frame_detect(source, weights="yolov7_mod/yolov7-tiny.pt", view_img=False,
             for i in range(3):
                 model(img, augment=augment)[0]
 
+        t0 = time.time()
         # Inference
         t1 = time_synchronized()
         with torch.no_grad():   # Calculating gradients would cause a GPU memory leak
@@ -121,8 +122,9 @@ def frame_detect(source, weights="yolov7_mod/yolov7-tiny.pt", view_img=False,
                         plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=1)
 
             # Print time (inference + NMS)
-            print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
-
+            #print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
+            total_time = round(time.time() - t0, 3)
+            print(f'{s}Done. (Inference:{total_time})')
             # Stream results
             if view_img:
                 cv2.imshow(str(p), im0)
@@ -153,6 +155,5 @@ def frame_detect(source, weights="yolov7_mod/yolov7-tiny.pt", view_img=False,
         print(f"Results saved to {save_dir}{s}")
 
     total_time = round(time.time() - t0, 3)
-    print(f"\n\nDetection time:\n{total_time} s\n\n")
-    return im0, det
+    return im0, det[:,[0,1,2,3,5]], total_time
 
