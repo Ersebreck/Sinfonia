@@ -48,4 +48,4 @@ path = "../datos/orion.jpg"
 #detect(path)
 #keyp(path)
 
-#segment(path)
+segment(path)
