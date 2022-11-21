@@ -5,7 +5,7 @@ from timeit import default_timer as timer
 import depth
 import csv
 import cv2
-from yolov7.YoloRos import yolo_segment
+from yolov7.YoloRos import yolo_segment, yolo_detect
 
 # obtain absolute path to the directory containing this file
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -40,11 +40,11 @@ def test_cpu(data, method,path):
     rgb_image, depth_image = data
     start = timer()
     # x1,y1,x2,y2,label = object.object_detection(path) TODO
-    pred = yolo_segment(path)
+    pred = yolo_detect(path)
     if len(pred[1])>0:
       arr = pred[1][0]
       result = pred[0]
-      x1,y1,x2,y2,label = int(arr[0]),int(arr[1]),int(arr[2]),int(arr[3]),int(arr[4])
+      x1,y1,x2,y2,label = int(arr[0]),int(arr[1]),int(arr[2]),int(arr[3]),int(arr[5])
       end = timer()
     else:
         return None, 0,0,0
